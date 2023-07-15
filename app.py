@@ -27,6 +27,7 @@ window = ThemedTk(theme="breeze")
 window.title('PwGen')
 window.geometry(str(width) + "x" + str(height))
 window.minsize(width, height)
+window.attributes('-topmost',True)
 
 # create the label which will hold the password later
 ent = tk.Entry(window, state='readonly', readonlybackground='white', fg='black', justify="center")
