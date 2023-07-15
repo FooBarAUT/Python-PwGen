@@ -52,7 +52,7 @@ slider = tk.Scale(window, from_=1, to=50, orient="horizontal")
 slider.pack(fill="x")
 
 # create button and place it
-startbtn = tk.Button(window, text = "GO", command = generate, activeforeground = "white", width="10").place(x = width/2 - 35, y = height-50)
+startbtn = tk.Button(window, text = "GO", command = generate, width="10").place(relx=0.5, rely=0.8, anchor="center")
 
 # start the main loop-di-loop
 window.mainloop()
