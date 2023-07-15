@@ -1,4 +1,6 @@
 import tkinter as tk
+from tkinter import ttk
+from ttkthemes import ThemedTk
 import random
 import string
 
@@ -20,7 +22,8 @@ def generate():
  var.set(result)
 
 # draw the window and give it dimensions
-window = tk.Tk()
+# window = tk.Tk()
+window = ThemedTk(theme="breeze")
 window.title('PwGen')
 window.geometry(str(width) + "x" + str(height))
 window.minsize(width, height)
@@ -38,13 +41,13 @@ number = tk.IntVar()
 symbol = tk.IntVar()
 
 # set up checkboxes and pack them in the window
-c1 = tk.Checkbutton(window, text='letters',variable=letters, onvalue=1, offvalue=0)
+c1 = ttk.Checkbutton(window, text='letters',variable=letters, onvalue=1, offvalue=0)
 c1.pack()
 
-c2 = tk.Checkbutton(window, text='numbers',variable=number, onvalue=1, offvalue=0)
+c2 = ttk.Checkbutton(window, text='numbers',variable=number, onvalue=1, offvalue=0)
 c2.pack()
 
-c3 = tk.Checkbutton(window, text='symbols',variable=symbol, onvalue=1, offvalue=0)
+c3 = ttk.Checkbutton(window, text='symbols',variable=symbol, onvalue=1, offvalue=0)
 c3.pack()
 
 # set up slider and give it a width of 100%
@@ -52,7 +55,7 @@ slider = tk.Scale(window, from_=1, to=50, orient="horizontal")
 slider.pack(fill="x")
 
 # create button and place it
-startbtn = tk.Button(window, text = "GO", command = generate, width="10").place(relx=0.5, rely=0.8, anchor="center")
+startbtn = ttk.Button(window, text = "GO", command = generate, width=10).place(relx=0.5, rely=0.8, anchor="center")
 
 # start the main loop-di-loop
 window.mainloop()
